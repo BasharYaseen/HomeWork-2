@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll the Dice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Bashar Dice</h1>
+        <h2>Home Work 2</h2>
+    </div>
+    <div class="container">
+        <h1>Roll the Dice!</h1>
+        <div class="dice">
+            {% if result %}
+                <p>You rolled a {{ result }}!</p>
+                <pre>
+{{ dice_face[0] }}
+{{ dice_face[1] }}
+{{ dice_face[2] }}
+{{ dice_face[3] }}
+{{ dice_face[4] }}
+                </pre>
+            {% else %}
+                <p>Click the button to roll the dice.</p>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('roll_dice') }}" class="roll-button">Roll the Dice</a>
+    </div>
+</body>
+</html>
